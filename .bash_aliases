@@ -1,4 +1,10 @@
-alias ls="ls -a $*"
+alias ls="ls -ACHG --color $*"
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+alias mkdir="mkdir -pv"
 
 alias mycode="cd ~/code"
 alias gotocode="cd ~/code"
