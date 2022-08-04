@@ -17,6 +17,9 @@ alias poshtheme="code $POSH_THEME"
 alias gw="./gradlew $*"
 alias gboot="./gradlew bootRun"
 
+alias nsl="npm run start-local"
+alias ns="npm run start"
+
 awsSetup() {
     export AWS_PROFILE=$1
     export AWS_REGION=us-east-1
@@ -33,6 +36,14 @@ localstack() {
 
 qualhost() {
     awsSetup qual
+}
+
+alias gc="git commit -m $*"
+
+gitDeleteAllLocalButCurrent() {
+    currentBranch=$(git branch --show-current)
+    echo "Deleting all branches but $currentBranch"
+    git branch | grep -v "$currentBranch" | xargs git branch -D
 }
 
 github() {
