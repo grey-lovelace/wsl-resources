@@ -8,7 +8,6 @@ alias mkdir="mkdir -pv"
 
 alias mycode="cd ~/code"
 alias gotocode="cd ~/code"
-alias python="python3"
 
 alias bashrc="code ~/.bashrc"
 alias aliases="code $ALIAS_DIR/.bash_aliases"
@@ -19,6 +18,10 @@ alias gboot="./gradlew bootRun"
 
 alias nsl="npm run start-local"
 alias ns="npm run start"
+
+alias dockerkill="docker kill $(docker ps -q)"
+
+alias startkmonad="bash $KMONAD_DIR/kmonad-startup.sh &"
 
 awsSetup() {
     export AWS_PROFILE=$1
@@ -57,6 +60,11 @@ github() {
 gitrap(){
     git branch -m $1
     git push -u origin $1
+}
+
+gitSetup(){
+    git config user.name "Grey Lovelace"
+    git config user.email $1
 }
 
 realmaster() {
